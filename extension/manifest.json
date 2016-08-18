@@ -1,0 +1,32 @@
+{
+	"manifest_version": 2,
+
+	"name": "first extension",
+	"short_name": "first extension",
+	"description": "This extension is swag",
+	"version": "0.89",
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"browser_action": {
+		"default_icon": "img/icon.png",
+		"default_popup": "popup.html",
+		"default_title": "lolz, this is an extension"
+	},
+
+	"icons": {
+		"128": "img/icon128.png",
+		"48": "img/icon.png"
+	},
+
+	"content_scripts": [ {
+		"css": ["css/popup.css"],
+		"js": ["scripts/jquery-ui.min.js","scripts/jquery.min.js","main.js"],
+		"matches": ["*://*.roblox.com/*"],
+		"run_at": "document_start"
+	} ],
+	
+	"permissions": ["*://*.roblox.com/*"]
+}
